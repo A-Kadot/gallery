@@ -13,7 +13,7 @@ post {
    stages {
        stage('Clone Repo'){
            steps{
-               git 'https://github.com/A-Kadot/gallery.git'
+               git 'git@github.com:A-Kadot/gallery.git'
            }
        }
        stage('install dependancies'){
