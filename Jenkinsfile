@@ -13,7 +13,7 @@ post {
    stages {
        stage('Clone Repo'){
            steps{
-               git 'git@github.com:A-Kadot/gallery.git'
+               git 'https://github.com/A-Kadot/gallery.git'
            }
        }
        stage('install dependancies'){
@@ -22,7 +22,7 @@ post {
                sh 'npm install express'
            }
        }
-       stage('Run Tests') {
+       stage('Tests') {
           steps {
             sh 'gradle test'
           }
