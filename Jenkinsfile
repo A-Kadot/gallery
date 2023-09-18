@@ -24,7 +24,7 @@ post {
        }
        stage('Run Tests') {
           steps {
-            sh 'npm test'
+            sh 'gradle test'
           }
        }
        
