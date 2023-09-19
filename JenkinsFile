@@ -17,7 +17,7 @@ post {
            }
        }
 	   
-	 }
+ }
        stage('install dependancies'){
            steps{
                sh 'npm install'
