@@ -16,6 +16,8 @@ post {
                git 'https://github.com/A-Kadot/gallery.git'
            }
        }
+	   
+	 }
        stage('install dependancies'){
            steps{
                sh 'npm install'
@@ -27,12 +29,14 @@ post {
             sh 'npm test'
           }
        }
-       
+           stage('Deploy to Render') {
+		  steps {
+        sh 'curl --request POST --url https://gallery-z1rp.onrender.com'
+       }
+		 }
         stage('slack notification') {
           steps {
-            slackSend color: 'good', message: "id ${env.BUILD_NUMBER} https://dashboard.render.com/", sendAsText: true
+            slackSend color: 'good', message: "id ${env.BUILD_NUMBER} Hello", sendAsText: true
           }
        }
-
-   }
 }
