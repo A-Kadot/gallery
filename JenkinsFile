@@ -30,7 +30,7 @@ post {
        
         stage('slack notification') {
           steps {
-            slackSend color: 'good', message: "id ${env.BUILD_NUMBER} https://hooks.slack.com/services/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", sendAsText: true
+            slackSend color: 'good', message: "id ${env.BUILD_NUMBER} https://app.slack.com/client/T0101L740P4/C05SCKWEHBR", sendAsText: true
           }
        }
 
